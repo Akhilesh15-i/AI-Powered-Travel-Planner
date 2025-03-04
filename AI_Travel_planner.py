@@ -8,7 +8,7 @@ import os
 st.set_page_config(page_title="AI Travel Planner", page_icon="✈️", layout="centered")
 
 # Secure API Key
-API_KEY = os.getenv("AIzaSyAoKiJyYM5hynFm10YmMM457WnNYx1QEnM")
+API_KEY = os.getenv("API_Key")
 
 # UI Title & Description
 st.title("🌍 AI-Powered Travel Planner")
@@ -33,7 +33,7 @@ if st.button("🔍 Generate Travel Plan"):
             ])
 
             # Initialize Chat Model
-            chat_model = ChatGoogleGenerativeAI(api_key="AIzaSyAoKiJyYM5hynFm10YmMM457WnNYx1QEnM", model="gemini-2.0-flash-exp")
+            chat_model = ChatGoogleGenerativeAI(api_key="API_Key", model="gemini-2.0-flash-exp")
             parser = StrOutputParser()
             chain = chat_template | chat_model | parser
 
